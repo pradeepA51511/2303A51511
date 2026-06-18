@@ -86,7 +86,7 @@ app.get('/priority-inbox', async (req, res) => {
     }
 });
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4001;
 app.listen(PORT, async () => {
     await authenticate();
     await Log("backend", "info", "config", `Server started on port ${PORT}`);
